@@ -34,3 +34,16 @@ nav?.querySelectorAll("a").forEach((link) => {
     navToggle?.setAttribute("aria-expanded", "false");
   });
 });
+
+// Mobile sticky CTA: ヒーロー(FVのCTA)が見えている間は隠す
+const stickyCta = document.getElementById("stickyCta");
+const heroSection = document.querySelector(".hero");
+
+if (stickyCta && heroSection && "IntersectionObserver" in window) {
+  new IntersectionObserver(
+    ([entry]) => {
+      stickyCta.classList.toggle("is-hidden", entry.isIntersecting);
+    },
+    { threshold: 0.2 }
+  ).observe(heroSection);
+}

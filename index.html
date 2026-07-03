@@ -18,13 +18,24 @@
     <!-- スマホ -->
     <source
       media="(max-width:768px)"
-      srcset="assets/images/life-organize-logo-sp.png">
+      type="image/webp"
+      srcset="assets/images/life-organize-logo-sp.webp"
+      width="340" height="227">
+    <source
+      media="(max-width:768px)"
+      srcset="assets/images/life-organize-logo-sp.png"
+      width="340" height="227">
 
     <!-- PC -->
+    <source
+      type="image/webp"
+      srcset="assets/images/life-organize-logo-pc.webp"
+      width="560" height="253">
     <img
       src="assets/images/life-organize-logo-pc.png"
       alt="人生整理相談室 女性専門の安心相談窓口"
-      class="logo__img">
+      class="logo__img"
+      width="560" height="253">
   </picture>
 </a>
 
@@ -96,17 +107,40 @@
     </div>
   </section> -->
 
-  <section class="hero"> 
-    <picture> 
-      <source 
-        media="(max-width:980px)" 
-        srcset="assets/images/life-organize-hero-sp.png"> 
+  <section class="hero">
+    <!-- TODO: https://lin.ee/XXXXXXX を実際のLINE友だち追加URLに一括置換してください -->
+    <a class="hero__link" href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener" aria-label="LINEで無料相談する">
+      <picture>
+        <source
+          media="(max-width:980px)"
+          type="image/webp"
+          srcset="assets/images/life-organize-hero-sp.webp"
+          width="904" height="1019">
+        <source
+          media="(max-width:980px)"
+          srcset="assets/images/life-organize-hero-sp.png"
+          width="904" height="1019">
+        <source
+          type="image/webp"
+          srcset="assets/images/life-organize-hero-pc.webp"
+          width="1662" height="946">
 
-      <img 
-        src="assets/images/life-organize-hero-pc.png" 
-        alt="人生整理相談室" 
-        class="hero-image"> 
-    </picture> 
+        <img
+          src="assets/images/life-organize-hero-pc.png"
+          alt="人生整理相談室｜あなたの悩み、一緒に整理しましょう。LINEで無料相談する"
+          class="hero-image"
+          width="1662" height="946"
+          fetchpriority="high">
+      </picture>
+    </a>
+
+    <div class="container">
+      <ul class="cta-assure" aria-label="安心してご利用いただけるポイント">
+        <li>匿名OK</li>
+        <li>通知は届きません</li>
+        <li>トーク履歴はいつでも削除可能</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Worries -->
@@ -147,7 +181,7 @@
         <img src="assets/images/service-woman.png" alt="" class="service-intro__img">
         <div class="service-intro__body">
           <p class="service-intro__label">サービス説明</p>
-          <p class="service-intro__desc">コレカラは、離婚を勧めるサービスではなく、<br>今の状況を整理する相談窓口です。</p>
+          <p class="service-intro__desc">人生整理相談室は、離婚を勧めるサービスではなく、<br>今の状況を整理する相談窓口です。</p>
         </div>
       </div>
     </div>
@@ -189,7 +223,7 @@
       </ol>
 
       <div class="flow__cta">
-        <a class="btn btn--line btn--large" href="#line">
+        <a class="btn btn--line btn--large" href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener">
           <img src="assets/icons/line-chat.svg" alt="" class="icon icon--white">
           LINEで無料相談する
           <span class="btn__arrow">›</span>
@@ -199,6 +233,12 @@
           LINEなら<br>いつでも気軽に<br>相談できます
         </div>
       </div>
+
+      <ul class="cta-assure" aria-label="安心してご利用いただけるポイント">
+        <li>匿名OK</li>
+        <li>通知は届きません</li>
+        <li>トーク履歴はいつでも削除可能</li>
+      </ul>
     </div>
   </section>
 
@@ -267,6 +307,26 @@
             </button>
             <div class="faq-item__a">
               <p>離婚やモラハラ、お金、子どものことなど、女性の人生に関わるさまざまな悩みについてご相談いただけます。どんな小さなことでも構いません。</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__q" aria-expanded="false">
+              <span class="faq-item__badge">Q</span>
+              夫にLINEを見られても大丈夫ですか？
+              <span class="faq-item__caret">⌄</span>
+            </button>
+            <div class="faq-item__a">
+              <p>はい、対策が可能です。トークの通知オフ・トーク一覧からの非表示・履歴の削除がいつでもできますので、ご家族にスマートフォンを見られる心配がある方も安心してご利用いただけます。設定方法が分からない場合は、LINEでお気軽にお尋ねください。</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__q" aria-expanded="false">
+              <span class="faq-item__badge">Q</span>
+              しつこく連絡が来ませんか？
+              <span class="faq-item__caret">⌄</span>
+            </button>
+            <div class="faq-item__a">
+              <p>ご安心ください。無理な営業や頻繁な連絡は一切ありません。ご連絡はあなたからのご相談へのお返事が基本です。配信が不要になった場合は、いつでもブロックしていただいて構いません。</p>
             </div>
           </li>
         </ul>
@@ -338,17 +398,57 @@
     </div>
   </section>
 
+  <!-- Operator -->
+  <section class="section operator" id="operator">
+    <div class="container">
+      <h2 class="section__title"><span class="deco">✦</span> 運営者情報 <span class="deco">✦</span></h2>
+
+      <div class="operator-card">
+        <dl class="operator-table">
+          <div class="operator-table__row">
+            <dt>サービス名</dt>
+            <dd>人生整理相談室</dd>
+          </div>
+          <div class="operator-table__row">
+            <dt>運営者</dt>
+            <!-- TODO: 実際の運営者名（会社名または個人名）に置き換えてください -->
+            <dd>人生整理相談室 運営事務局</dd>
+          </div>
+          <div class="operator-table__row">
+            <dt>所在地</dt>
+            <!-- TODO: 実際の所在地に置き換えてください -->
+            <dd>〇〇県〇〇市（準備中）</dd>
+          </div>
+          <div class="operator-table__row">
+            <dt>事業内容</dt>
+            <dd>女性向け相談窓口の運営</dd>
+          </div>
+          <div class="operator-table__row">
+            <dt>お問い合わせ</dt>
+            <dd>LINE公式アカウントのトークよりご連絡ください</dd>
+          </div>
+        </dl>
+        <p class="operator-card__note">ご相談内容やお問い合わせ内容が外部に公開されることはありません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="section final-cta">
     <div class="container final-cta__inner">
       <p class="final-cta__text">一人で悩まず、今の状況を整理して<br>あなたの未来を一緒に考えましょう。</p>
       <div class="final-cta__cta">
-        <a class="btn btn--line btn--large" href="#line">
+        <a class="btn btn--line btn--large" href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener">
           <img src="assets/icons/line-chat.svg" alt="" class="icon icon--white">
           LINEで無料相談する
           <span class="btn__arrow">›</span>
         </a>
         <p class="final-cta__note">24時間いつでもお気軽にご連絡いただけます</p>
+        <ul class="cta-assure cta-assure--light" aria-label="安心してご利用いただけるポイント">
+          <li>匿名OK</li>
+          <li>通知は届きません</li>
+          <li>トーク履歴はいつでも削除可能</li>
+        </ul>
       </div>
       <p class="final-cta__disclaimer">⚠️ 法律判断は弁護士等の専門家に確認が必要です。</p>
     </div>
@@ -358,9 +458,22 @@
 
 <footer class="footer">
   <div class="container">
+    <nav class="footer__nav">
+      <a href="#operator">運営者情報</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </nav>
     <p>&copy; 2026 人生整理相談室</p>
   </div>
 </footer>
+
+<!-- Mobile fixed CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn--line sticky-cta__btn" href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener">
+    <img src="assets/icons/line-chat.svg" alt="" class="icon icon--white">
+    LINEで無料相談する
+    <span class="btn__arrow">›</span>
+  </a>
+</div>
 
 <script src="js/script.js"></script>
 </body>

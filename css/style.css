@@ -261,6 +261,32 @@ h1, h2, h3, p { margin: 0; }
 }
 
 
+/* ---------- CTA microcopy ---------- */
+.cta-assure {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+.cta-assure li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.cta-assure li::before {
+  content: "✓";
+  color: var(--pink-deep);
+  font-weight: 800;
+}
+.cta-assure--light { color: rgba(255, 255, 255, 0.95); }
+.cta-assure--light li::before { color: var(--white); }
+
+.hero .cta-assure { padding-bottom: 6px; }
+
 /* ---------- Section heading ---------- */
 /* .section { padding: 72px 0; } */
 .section {
@@ -574,6 +600,119 @@ h1, h2, h3, p { margin: 0; }
   font-size: 1.02rem;
 }
 
+/* ---------- Operator ---------- */
+.operator { background: linear-gradient(180deg, #fff 0%, var(--pink-50) 100%); }
+.operator-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  box-shadow: var(--shadow-soft);
+}
+.operator-table { margin: 0; }
+.operator-table__row {
+  display: flex;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--pink-100);
+}
+.operator-table__row:last-child { border-bottom: none; }
+.operator-table__row dt {
+  flex-shrink: 0;
+  width: 130px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--pink-deep);
+}
+.operator-table__row dd {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-main);
+}
+.operator-card__note {
+  margin-top: 20px;
+  font-size: 0.82rem;
+  color: var(--text-sub);
+}
+.operator-card__note a {
+  color: var(--pink-deep);
+  text-decoration: underline;
+}
+
+/* ---------- Policy page ---------- */
+.policy__inner { max-width: 780px; }
+.policy__lead {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  margin-bottom: 36px;
+}
+.policy-block {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 18px;
+}
+.policy-block__title {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--pink-deep);
+  margin-bottom: 12px;
+}
+.policy-block p {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+.policy-block p:last-child { margin-bottom: 0; }
+.policy-block a {
+  color: var(--pink-deep);
+  text-decoration: underline;
+}
+.policy-list {
+  margin: 10px 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.policy-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.policy-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pink-300);
+}
+.policy__date {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  margin-top: 24px;
+}
+.policy__back {
+  text-align: center;
+  margin-top: 36px;
+}
+.policy { background: var(--pink-50); }
+
+.header__back {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+.header__back:hover { color: var(--pink-deep); }
+
 /* ---------- Final CTA ---------- */
 .final-cta {
   background: linear-gradient(135deg, var(--pink-300), var(--pink-deep));
@@ -613,6 +752,35 @@ h1, h2, h3, p { margin: 0; }
   opacity: 0.85;
 }
 
+/* ---------- Mobile sticky CTA ---------- */
+.sticky-cta { display: none; }
+
+@media (max-width: 980px) {
+  .sticky-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--pink-100);
+    transition: transform 0.25s ease;
+  }
+  .sticky-cta.is-hidden { transform: translateY(110%); }
+  .sticky-cta__btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  /* 固定CTAでフッターが隠れないよう余白を確保 */
+  body { padding-bottom: 72px; }
+}
+
 /* ---------- Footer ---------- */
 .footer {
   background: var(--text-main);
@@ -621,6 +789,18 @@ h1, h2, h3, p { margin: 0; }
   padding: 24px 0;
   font-size: 0.8rem;
 }
+.footer__nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 12px;
+}
+.footer__nav a {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem;
+}
+.footer__nav a:hover { color: var(--white); text-decoration: underline; }
 
 /* =========================================================
    Responsive
@@ -657,6 +837,13 @@ h1, h2, h3, p { margin: 0; }
       "disclaimer";
     text-align: center;
   }
+
+  .operator-card { padding: 28px 24px; }
+  .operator-table__row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .operator-table__row dt { width: auto; }
 }
 
 @media (max-width: 560px) {
